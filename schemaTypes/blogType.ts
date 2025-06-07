@@ -70,7 +70,21 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        { type: 'block' },
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt text',
+              type: 'string',
+              description: 'Alternative text for SEO and accessibility',
+            },
+          ],
+        },
+      ],
     },
 
     // SEO: Custom meta title
@@ -127,17 +141,17 @@ export default {
     },
 
     // Robots meta tag for SEO control
-    {
-      name: 'robots',
-      title: 'Robots Meta',
-      type: 'string',
-      description: 'Control search engine indexing (e.g., "index, follow" or "noindex, nofollow")',
-      options: {
-        list: [
-          { title: 'Index, Follow', value: 'index, follow' },
-          { title: 'No Index, No Follow', value: 'noindex, nofollow' },
-        ],
-      },
+            {
+              name: 'robots',
+              title: 'Robots Meta',
+              type: 'string',
+              description: 'Control search engine indexing (e.g., "index, follow" or "noindex, nofollow")',
+              options: {
+                list: [
+                  { title: 'Index, Follow', value: 'index, follow' },
+                  { title: 'No Index, No Follow', value: 'noindex, nofollow' },
+                ],
+              },
     },
 
     // Optional: Primary tag for main topic
